@@ -1,0 +1,8 @@
+.platform-icons a {
+    text-decoration: none;
+    /* color: white; */
+}
+
+.platform-icons a:hover {
+    color: cadetblue;
+}
