@@ -4,7 +4,7 @@ import Service from '../Home/ServicesHome/Service';
 
 const Services = () => {
     const services = useLoaderData();
-    console.log(services)
+    // console.log(services);
     return (
         <div className='mb-40'>
             <div>

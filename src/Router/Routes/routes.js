@@ -21,7 +21,7 @@ export const router = createBrowserRouter([
             {
                 path: '/services/:id',
                 element: <ServiceDetails></ServiceDetails>,
-                loader: async () => fetch(`http://localhost:5000/services?limit=${50}`)
+                loader: async ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
             },
         ]
     }
