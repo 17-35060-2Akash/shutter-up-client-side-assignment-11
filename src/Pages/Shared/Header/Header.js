@@ -7,6 +7,7 @@ const Header = () => {
         <li className='font-semibold'><Link to='/'>Home</Link></li>
         <li className='font-semibold'><Link to='/'>My Reviews</Link></li>
         <li className='font-semibold'><Link to='/'>Add Service</Link></li>
+        <li className='font-semibold'><Link to='/'>Blog</Link></li>
         <li className='font-semibold'><Link to='/'>Login</Link></li>
         {/* {
             user?.email ?

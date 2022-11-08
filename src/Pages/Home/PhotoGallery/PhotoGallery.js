@@ -33,9 +33,9 @@ const PhotoGallery = () => {
                 </div>
                 <div className='py-10 '>
                     <h1 className="text-5xl font-bold py-10 ">
-                        Our Fresh Works</h1>
-                    <p className="py-6 text-xl px-12 ">Hire us for an amazing experience in no time
-                        Choose a event and just call us. we’ll take care of the rest. Shutter Up is a platform
+                        Some Fresh Works</h1>
+                    <p className="py-6 text-xl px-12 ">Hire me for an amazing experience in no time
+                        Choose a event and just call. A photo can explain thousand words. Shutter Up is a platform
                         to cherish your imagination into the canvas and capture your memories with
                         an artictic way.</p>
 
