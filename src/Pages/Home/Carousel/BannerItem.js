@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './BannerItem.css';
 
 const BannerItem = ({ slide }) => {
     const { image, id, prev, next } = slide;
@@ -13,11 +13,12 @@ const BannerItem = ({ slide }) => {
             <div className="absolute flex flex-col justify-end transform -translate-y-1/2 right-24  top-1/2">
                 <h1 className='text-6xl font-bold text-white text-end'>We
                     <br /><span className='text-blue-600'>Shoot</span> <br /> Your  <br />
-                    Every Memory</h1>
+                    Memories</h1>
+                <p className='text-white font-medium text-2xl pt-5 text-end'>Give moments a fine texture <br /> with <span className='text-blue-600'> SHUTTER UP!</span></p>
+
             </div>
-            <div className="absolute flex flex-col justify-end transform -translate-y-1/2 right-24  top-3/4">
-                <p className='text-white font-medium text-2xl pt-2 text-end'>Give moments a fine texture <br /> with <span className='text-blue-600'> SHUTTER UP!</span></p>
-            </div>
+            {/*  <div className="absolute flex flex-col justify-end transform -translate-y-1/2 right-24  top-3/4">
+            </div> */}
 
 
             <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-14 bottom-6">
