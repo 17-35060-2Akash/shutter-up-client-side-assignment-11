@@ -1,18 +1,51 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Result } from 'postcss';
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
+import toast from 'react-hot-toast';
 
 const SignUp = () => {
     const [fieldValue, setFieldValue] = useState({});
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
 
+    const { createUser, updateUserProfile } = useContext(AuthContext);
 
     const handleOnSubmit = event => {
         event.preventDefault();
-        console.log(fieldValue.name, fieldValue.photoURL, fieldValue.email, fieldValue.password);
+        // console.log(fieldValue.name, fieldValue.photoURL, fieldValue.email, fieldValue.password);
 
+        createUser(fieldValue.email, fieldValue.password)
+            .then(result => {
+                const user = result.user;
+                // console.log(user);
 
+                setError('');
+                event.target.reset();
+                handleUpdateProfile(fieldValue.name, fieldValue.photoURL);
+                toast.success('Successfully Signed Up!');
+                navigate('/');
+
+            })
+            .catch(error => {
+                console.error(error);
+                setError(error.message);
+
+            });
 
     };
+
+    const handleUpdateProfile = (name, photoURL) => {
+        updateUserProfile({
+            displayName: name,
+            photoURL: photoURL
+        })
+            .then(() => { })
+            .catch(error => console.error(error))
+    };
+
+
 
     const handleOnChange = event => {
         const field = event.target.name;
@@ -62,8 +95,11 @@ const SignUp = () => {
                             <input onChange={handleOnChange} type="password" name='password' placeholder="password" className="input input-bordered" required />
 
                         </div>
-                        <div className="form-control mt-20">
-                            <button type='submit' className="btn btn-primary">Login</button>
+                        <div className='text-start text-lg pl-1 pt-2 text-rose-600'>
+                            {error}
+                        </div>
+                        <div className="form-control mt-10">
+                            <button type='submit' className="btn btn-primary">Sign Up</button>
                         </div>
                     </div>
                 </form>

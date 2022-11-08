@@ -1,14 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import titlelogo from '../../../assets/icons/titlelogo.png';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
+
+    const { logOut } = useContext(AuthContext);
+
+    const handleLOgOut = () => {
+        logOut()
+            .then(() => {
+                console.log('logged out!');
+            })
+            .catch(error => console.error(error))
+    };
+
     const menuItems = <>
         <li className='font-semibold'><Link to='/'>Home</Link></li>
         <li className='font-semibold'><Link to='/'>My Reviews</Link></li>
         <li className='font-semibold'><Link to='/'>Add Service</Link></li>
         <li className='font-semibold'><Link to='/'>Blog</Link></li>
         <li className='font-semibold'><Link to='/login'>Login</Link></li>
+        <button onClick={handleLOgOut} className='btn btn-active btn-ghost'>Logout</button>
         {/* {
             user?.email ?
                 <>

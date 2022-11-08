@@ -1,15 +1,29 @@
 import { GoogleAuthProvider } from 'firebase/auth';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaGoogle } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 
 const SocialLogin = () => {
+    const { providerLoginGoogle } = useContext(AuthContext);
+    const [error, setError] = useState('');
 
+    const navigate = useNavigate();
+
+    const googleProvider = new GoogleAuthProvider();
 
     const handleGoogleSignIn = () => {
+        providerLoginGoogle(googleProvider)
+            .then(result => {
+                const user = result.user;
+                // console.log(user);
+                navigate('/');
+                // navigate(from, { replace: true })
+            })
+            .catch(error => console.error(error));
+    };
 
-    }
 
     return (
         <div className=''>

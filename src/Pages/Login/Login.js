@@ -1,14 +1,36 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
-
+import toast from 'react-hot-toast';
 
 const Login = () => {
     const [fieldValue, setFieldValue] = useState({});
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
+
+    const { signIn, setLoading } = useContext(AuthContext);
 
     const handleOnSubmit = event => {
         event.preventDefault();
-        console.log(fieldValue.email, fieldValue.password);
+        // console.log(fieldValue.email, fieldValue.password);
+
+        signIn(fieldValue.email, fieldValue.password)
+            .then(result => {
+                const user = result.user;
+                // console.log(user);
+
+                event.target.reset();
+                toast.success('Welcome!');
+                setError('');
+                navigate('/');
+                // navigate(from, { replace: true })
+            })
+            .catch(error => {
+                console.error(error);
+                setError(error.message);
+            })
+        // .finally(() => setLoading(false))
 
     }
 
@@ -50,7 +72,10 @@ const Login = () => {
                                 <a href="/login" className="label-text-alt link link-hover text-secondary font-medium">Forgot password?</a>
                             </label>
                         </div>
-                        <div className="form-control mt-20">
+                        <div className='text-start text-lg pl-1 pt-2 text-rose-600'>
+                            {error}
+                        </div>
+                        <div className="form-control mt-12">
                             <button type='submit' className="btn btn-secondary">Login</button>
                         </div>
                     </div>
