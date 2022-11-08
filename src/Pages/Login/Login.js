@@ -18,7 +18,7 @@ const Login = () => {
         signIn(fieldValue.email, fieldValue.password)
             .then(result => {
                 const user = result.user;
-                // console.log(user);
+                console.log(user);
 
                 event.target.reset();
                 toast.success('Welcome!');
