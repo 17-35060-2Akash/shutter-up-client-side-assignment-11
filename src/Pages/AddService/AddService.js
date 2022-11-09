@@ -70,7 +70,7 @@ const AddService = () => {
                     <input onChange={handleOnChange} type="text" name='rating' placeholder="Rating" title='only add the rating' defaultValue={''} className="input input-ghost w-full bg-white h-14 text-md px-10" />
                 </div>
                 <textarea onChange={handleOnChange} name='description' className="textarea  h-36 w-full py-5 my-5 bg-white text-md px-10" placeholder="Description" title='not more than 300 words' required></textarea>
-                <input className='btn bg-green-500 border-0 w-full h-14 text-md' type='submit' value='Add Your Service' />
+                <input className='btn bg-green-500 border-0 w-full h-14 text-md font-bold' type='submit' value='Add Service' />
             </form>
 
         </div>
