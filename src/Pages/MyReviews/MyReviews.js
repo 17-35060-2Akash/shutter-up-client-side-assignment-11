@@ -13,13 +13,18 @@ const MyReviews = () => {
     useEffect(() => {
         const url = `http://localhost:5000/reviews?email=${user?.email}`;
         // console.log(url);
-        fetch(url)
+        fetch(url, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('Shutter-up')}`
+            }
+        })
             .then(res => {
                 if (res.status === 401 || res.status === 403) {
                     return logOut()
                 }
                 return res.json();
             })
+
             .then(data => {
                 // console.log(data);
                 setMyReviews(data);

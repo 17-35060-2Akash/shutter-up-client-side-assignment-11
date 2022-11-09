@@ -25,7 +25,29 @@ const SignUp = () => {
                 event.target.reset();
                 handleUpdateProfile(fieldValue.name, fieldValue.photoURL);
                 toast.success('Successfully Signed Up!');
-                navigate('/');
+
+
+                ///get jwt token
+                const currentUser = {
+                    email: user.email
+                }
+                // console.log(currentUser)
+
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        // console.log(data);
+                        localStorage.setItem('Shutter-up', data.token);
+                        navigate('/');
+                        // navigate(from, { replace: true })
+
+                    });
 
             })
             .catch(error => {
