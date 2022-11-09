@@ -6,7 +6,7 @@ const Blog = () => {
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content text-center">
 
-                <div className="">
+                <div className="mt-20">
                     <h1 className="text-5xl font-bold">Frequently Asked Questios</h1>
                     {/* 1 */}
                     <div className='pt-20 text-start'>
