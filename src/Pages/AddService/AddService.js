@@ -1,12 +1,36 @@
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 import cover from '../../assets/covers/camera-cover.jpg';
 
 const AddService = () => {
-    const [fieldValue, setFieldValue] = useState({});
+    const [service, setService] = useState({});
 
     const handleAddService = event => {
         event.preventDefault();
-        console.log(fieldValue);
+        // console.log(service);
+
+        if (service.description.length > 300) {
+            return toast.error("Description can't be more than 300 words!");
+        }
+
+        fetch('http://localhost:5000/services', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(service)
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                if (data.acknowledged) {
+                    toast.success('Cheers! Service Added Successfully.');
+                    event.target.reset();
+                }
+                else {
+                    toast.error('Something went wrong adding your service!');
+                }
+            })
 
     };
 
@@ -14,9 +38,9 @@ const AddService = () => {
         const field = event.target.name;
         const value = event.target.value;
 
-        const newFieldValue = { ...fieldValue };
+        const newFieldValue = { ...service };
         newFieldValue[field] = value;
-        setFieldValue(newFieldValue);
+        setService(newFieldValue);
 
 
     };
@@ -45,8 +69,8 @@ const AddService = () => {
                     <input onChange={handleOnChange} type="text" name='price' placeholder="charge/day" title='only add the amount' className="input input-ghost w-full bg-white h-14 text-md px-10" required />
                     <input onChange={handleOnChange} type="text" name='rating' placeholder="Rating" title='only add the rating' defaultValue={''} className="input input-ghost w-full bg-white h-14 text-md px-10" />
                 </div>
-                <textarea name='description' className="textarea  h-36 w-full py-5 my-5 bg-white text-md px-10" placeholder="Description" title='not more than 300 words' required></textarea>
-                <input onChange={handleOnChange} className='btn bg-green-500 border-0 w-full h-14 text-md' type='submit' value='Place Your Order' />
+                <textarea onChange={handleOnChange} name='description' className="textarea  h-36 w-full py-5 my-5 bg-white text-md px-10" placeholder="Description" title='not more than 300 words' required></textarea>
+                <input className='btn bg-green-500 border-0 w-full h-14 text-md' type='submit' value='Add Your Service' />
             </form>
 
         </div>
