@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 import toast from 'react-hot-toast';
@@ -7,7 +7,10 @@ import toast from 'react-hot-toast';
 const Login = () => {
     const [fieldValue, setFieldValue] = useState({});
     const [error, setError] = useState('');
+
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const { signIn, setLoading } = useContext(AuthContext);
 
@@ -23,14 +26,14 @@ const Login = () => {
                 event.target.reset();
                 toast.success('Welcome!');
                 setError('');
-                navigate('/');
-                // navigate(from, { replace: true })
+                // navigate('/');
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.error(error);
                 setError(error.message);
             })
-        // .finally(() => setLoading(false))
+            .finally(() => setLoading(false))
 
     }
 

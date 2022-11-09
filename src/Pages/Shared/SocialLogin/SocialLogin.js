@@ -1,7 +1,7 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { FaGoogle } from "react-icons/fa";
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 
@@ -10,6 +10,8 @@ const SocialLogin = () => {
     const [error, setError] = useState('');
 
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const googleProvider = new GoogleAuthProvider();
 
@@ -18,8 +20,8 @@ const SocialLogin = () => {
             .then(result => {
                 const user = result.user;
                 // console.log(user);
-                navigate('/');
-                // navigate(from, { replace: true })
+                // navigate('/');
+                navigate(from, { replace: true });
             })
             .catch(error => console.error(error));
     };
