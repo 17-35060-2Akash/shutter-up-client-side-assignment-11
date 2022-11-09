@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import titlelogo from '../../../assets/icons/titlelogo.png';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
 
     const { user, logOut } = useContext(AuthContext);
+    const location = useLocation();
 
     const handleLOgOut = () => {
         logOut()
@@ -44,7 +45,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-start">
-                <Link to='/' className="btn btn-ghost normal-case">
+                <Link to='/' className="btn btn-ghost normal-case" state={{ from: location }} replace>
                     <img className='w-52' src={titlelogo} alt="" />
                 </Link>
             </div>

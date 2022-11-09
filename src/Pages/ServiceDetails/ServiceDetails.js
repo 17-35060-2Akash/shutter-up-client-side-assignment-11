@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useLocation } from 'react-router-dom';
 import { FaStar, FaDollarSign, FaUser } from "react-icons/fa";
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
@@ -11,6 +11,7 @@ const ServiceDetails = () => {
     const { _id, name, img, price, rating, description } = service;
 
     const { user } = useContext(AuthContext);
+    const location = useLocation();
     // console.log(user);
 
     //autoLoading reviews
@@ -47,7 +48,8 @@ const ServiceDetails = () => {
                 reviewTime,
                 reviewDate
             },
-            serviceId: service._id
+            serviceId: service._id,
+            serviceName: service.name
         };
 
         // console.log(review);
@@ -158,7 +160,7 @@ const ServiceDetails = () => {
                                 :
                                 <>
                                     <div className='text-lg text-start bg-base-300 w-1/2  rounded-xl px-6 py-10 mb-6 mx-auto'>
-                                        <p className='text-center text-3xl font-medium'>Please <Link to='/login'>
+                                        <p className='text-center text-3xl font-medium'>Please <Link to='/login' state={{ from: location }} replace>
                                             <button className='btn text-2xl mx-2'>Login</button>
                                         </Link> to add a review</p>
                                     </div>

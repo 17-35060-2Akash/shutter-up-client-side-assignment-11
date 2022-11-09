@@ -4,6 +4,7 @@ import AddService from "../../Pages/AddService/AddService";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import MyReviews from "../../Pages/MyReviews/MyReviews";
+import Update from "../../Pages/MyReviews/Update/Update";
 import Blog from "../../Pages/Others/Blog/Blog";
 import NotFound from "../../Pages/Others/NotFound/NotFound";
 import ServiceDetails from "../../Pages/ServiceDetails/ServiceDetails";
@@ -55,6 +56,11 @@ export const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/update/:id',
+                element: <Update></Update>,
+                loader: async ({ params }) => fetch(`http://localhost:5000/update/${params.id}`)
             },
         ]
     },
