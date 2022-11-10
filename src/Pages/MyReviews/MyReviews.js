@@ -7,7 +7,7 @@ import useTitle from '../../hooks/useTitle';
 import cover from '../../assets/images/carousel-images/img2.jpg';
 
 const MyReviews = () => {
-    useTitle('MyReviews');
+    useTitle('My Reviews');
 
     const { user, logOut } = useContext(AuthContext);
     const [myReviews, setMyReviews] = useState([]);
@@ -90,7 +90,7 @@ const MyReviews = () => {
                 </div>
             </div>
             <div className="hero min-h-screen " >
-                <div className=" text-center flex flex-col">
+                <div className="hero-content text-center flex flex-col">
                     <h1 className='text-4xl font-bold py-16 pt-20 '>You have {myReviews.length} review comments</h1>
                     <div className="pb-40 ">
                         {/*  */}
