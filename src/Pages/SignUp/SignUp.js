@@ -4,8 +4,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 import toast from 'react-hot-toast';
+import useTitle from '../../hooks/useTitle';
 
 const SignUp = () => {
+    useTitle('Sign Up');
+
     const [fieldValue, setFieldValue] = useState({});
     const [error, setError] = useState('');
     const navigate = useNavigate();

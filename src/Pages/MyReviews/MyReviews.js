@@ -3,9 +3,11 @@ import toast from 'react-hot-toast';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import MyReviewElement from './MyReviewElement';
 import Swal from "sweetalert2";
-import { Link } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
+import cover from '../../assets/images/carousel-images/img2.jpg';
 
 const MyReviews = () => {
+    useTitle('MyReviews');
 
     const { user, logOut } = useContext(AuthContext);
     const [myReviews, setMyReviews] = useState([]);
@@ -81,51 +83,64 @@ const MyReviews = () => {
 
 
     return (
-        <div className='pb-40'>
-            <h1 className='text-4xl font-bold py-16 pt-20'>You have {myReviews.length} review comments</h1>
+        <div className=''>
+            <div className=''>
+                <div className=''>
+                    <img src={cover} alt='' className="w-full  " />
+                </div>
+            </div>
+            <div className="hero min-h-screen " >
+                <div className=" text-center flex flex-col">
+                    <h1 className='text-4xl font-bold py-16 pt-20 '>You have {myReviews.length} review comments</h1>
+                    <div className="pb-40 ">
+                        {/*  */}
+                        {
+                            myReviews.length > 0 ?
+                                <>
+                                    <div className="overflow-x-auto w-full py-10">
 
-            {
-                myReviews.length > 0 ?
-                    <>
-                        <div className="overflow-x-auto w-full py-10">
+                                        <table className="table w-full  border-b-8 border-l-8 border-r-8">
+                                            <thead>
+                                                <tr className=''>
+                                                    <th>
+                                                        <label>
+                                                            {/* <input type="checkbox" className="checkbox" /> */}
+                                                        </label>
+                                                    </th>
+                                                    <th className=''>Service Name</th>
+                                                    <th className='text-center'>Reviews</th>
+                                                    <th className='text-end'>Actions</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {
+                                                    myReviews.map((review, idx) => <MyReviewElement
+                                                        key={review._id}
+                                                        review={review}
+                                                        idx={idx}
+                                                        handleDelete={handleDelete}></MyReviewElement>)
+                                                }
 
-                            <table className="table w-full  border-b-8 border-l-8 border-r-8">
-                                <thead>
-                                    <tr className=''>
-                                        <th>
-                                            <label>
-                                                {/* <input type="checkbox" className="checkbox" /> */}
-                                            </label>
-                                        </th>
-                                        <th className=''>Service Name</th>
-                                        <th className='text-center'>Reviews</th>
-                                        <th className='text-end'>Actions</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {
-                                        myReviews.map((review, idx) => <MyReviewElement
-                                            key={review._id}
-                                            review={review}
-                                            idx={idx}
-                                            handleDelete={handleDelete}></MyReviewElement>)
-                                    }
+                                            </tbody>
 
-                                </tbody>
+                                        </table>
+                                    </div>
+                                </>
+                                :
+                                <>
+                                    <div className='text-lg text-start bg-base-300 w-1/2  rounded-xl px-6 py-10 mb-6 mx-auto'>
+                                        <p className='text-center text-3xl font-medium'>No reviews were added</p>
+                                    </div>
+                                </>
+                        }
+                        {/*  */}
+                    </div>
+                </div>
+            </div>
 
-                            </table>
-                        </div>
-                    </>
-                    :
-                    <>
-                        <div className='text-lg text-start bg-base-300 w-1/2  rounded-xl px-6 py-10 mb-6 mx-auto'>
-                            <p className='text-center text-3xl font-medium'>No reviews were added</p>
-                        </div>
-                    </>
-            }
 
-        </div>
+        </div >
     );
 };
 

@@ -4,8 +4,10 @@ import { FaStar, FaDollarSign, FaUser } from "react-icons/fa";
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
 import Review from './Review';
+import useTitle from '../../hooks/useTitle';
 
 const ServiceDetails = () => {
+    useTitle('ServiceDetails');
     const service = useLoaderData();
 
     const { _id, name, img, price, rating, description } = service;

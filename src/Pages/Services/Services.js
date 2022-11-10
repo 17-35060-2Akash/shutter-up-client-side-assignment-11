@@ -1,12 +1,20 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 import Service from '../Home/ServicesHome/Service';
-
+import cover from '../../assets/covers/img3.jpg';
 const Services = () => {
+    useTitle('Services');
+
     const services = useLoaderData();
     // console.log(services);
     return (
         <div className='mb-40'>
+            <div className=''>
+                <div className=''>
+                    <img src={cover} alt='' className="w-full  " />
+                </div>
+            </div>
             <div>
                 <h1 className="text-5xl font-bold py-10 my-14">
                     Checkout All The Services</h1>

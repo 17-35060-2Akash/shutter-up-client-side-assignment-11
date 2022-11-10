@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import cover from '../../assets/covers/camera-cover.jpg';
+import useTitle from '../../hooks/useTitle';
 
 const AddService = () => {
     const [service, setService] = useState({});
+    useTitle('Add Service');
 
     const handleAddService = event => {
         event.preventDefault();

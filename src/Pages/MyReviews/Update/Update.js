@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useLoaderData, useNavigate } from 'react-router-dom';
+import useTitle from '../../../hooks/useTitle';
 
 const Update = () => {
+    useTitle('Update Reviews');
+
     const prevReview = useLoaderData();
     const [review, setReview] = useState(prevReview);
     // console.log(prevReview);
