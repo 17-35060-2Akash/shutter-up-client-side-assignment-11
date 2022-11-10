@@ -1,0 +1,9 @@
+@media screen and (max-width: 800px) {
+    .logo-img {
+        width: 50px,
+    }
+
+    .title-name {
+        font-size: smaller;
+    }
+}

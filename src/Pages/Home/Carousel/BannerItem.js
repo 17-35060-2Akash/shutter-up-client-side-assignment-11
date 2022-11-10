@@ -10,11 +10,11 @@ const BannerItem = ({ slide }) => {
                 <img src={image} alt='' className="w-full " />
             </div>
 
-            <div className="absolute flex flex-col justify-end transform -translate-y-1/2 right-24  top-1/2">
-                <h1 className='text-6xl font-bold text-white text-end'>Let's
+            <div className="absolute flex flex-col justify-end transform -translate-y-1/2 right-24 top-1/2">
+                <h1 className='text-6xl font-bold text-white text-end carousel-add'>Let's
                     <br /><span className='text-blue-600'>Shoot</span> <br /> Your  <br />
                     Memories</h1>
-                <p className='text-white font-medium text-2xl pt-5 text-end'>Give moments a fine texture <br /> with <span className='text-blue-600'> SHUTTER UP!</span></p>
+                <p className='text-white font-medium text-2xl pt-5 text-end carousel-add-below'>Give moments a fine texture <br /> with <span className='text-blue-600'> SHUTTER UP!</span></p>
 
             </div>
             {/*  <div className="absolute flex flex-col justify-end transform -translate-y-1/2 right-24  top-3/4">

@@ -3,3 +3,23 @@
     transition: box-shadow 1s ease;
     color: #2040fe;
 }
+
+@media screen and (max-width: 700px) {
+    .card-section {
+        grid-template-columns: 1fr;
+    }
+
+    .fresh-title {
+        font-size: x-large;
+    }
+
+    .big-image {
+        width: 99%;
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1100px) {
+    .fresh-title {
+        font-size: xx-large;
+    }
+}

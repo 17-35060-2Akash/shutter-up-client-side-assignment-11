@@ -38,7 +38,8 @@ const ServiceDetails = () => {
         const date = new Date();
         const reviewTime = date.toLocaleTimeString();
         const reviewDate = date.toLocaleDateString();
-        // console.log(reviewTime, reviewDate);
+        const fullDateTime = [reviewTime, reviewDate].join(' ');
+        // console.log(fullDateTime);
 
 
         const review = {
@@ -46,6 +47,7 @@ const ServiceDetails = () => {
             displayName: user?.displayName,
             photoURL: user?.photoURL,
             comment: comment,
+            fullDateTime,
             reviewDateAndTime: {
                 reviewTime,
                 reviewDate
@@ -96,7 +98,7 @@ const ServiceDetails = () => {
 
                         </div>
                         <div className='mt-4'>
-                            <p className='text-2xl text-justify font-normal px-5 my-5'>{description}</p>
+                            <p className='text-2xl text-justify font-normal px-5 p-10 px-16 my-10 mb-20 bg-white rounded-xl'>{description}</p>
                         </div>
                         <div className="card-actions justify-end">
 
@@ -113,9 +115,15 @@ const ServiceDetails = () => {
                         <div className="previous-reviews grid grid-cols-1 gap-8 mb-20">
                             {/* ///// loading prev reviews//////  */}
                             {
-                                reviews.map(review => <Review
-                                    key={review._id}
-                                    review={review}></Review>)
+                                reviews.length === 0 ?
+                                    <div>
+                                        <h1 className="text-2xl font-semibold py-10 pb-10 bg-gray-200 w-9/12 mx-auto rounded-xl">No reviews added to this section yet</h1>
+
+                                    </div>
+                                    :
+                                    reviews.map(review => <Review
+                                        key={review._id}
+                                        review={review}></Review>)
                             }
                         </div>
 
@@ -133,6 +141,7 @@ const ServiceDetails = () => {
                                                 <div className='flex justify-start align-middle ml-1 mb-1'>
                                                     {
                                                         user?.photoURL ?
+
                                                             <img className="mask mask-circle w-12 mr-4 mb-3" src={user?.photoURL} alt='' />
                                                             :
                                                             <FaUser className='text-5xl mr-4 mb-3 mask mask-circle bg-white p-2'></FaUser>

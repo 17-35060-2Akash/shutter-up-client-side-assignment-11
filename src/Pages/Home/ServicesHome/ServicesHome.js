@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Service from './Service';
+import '../Home.css';
 
 const ServicesHome = () => {
     const [serviceProducts, setServiceProducts] = useState([]);
@@ -22,7 +23,7 @@ const ServicesHome = () => {
     return (
         <div className='mb-12'>
             <div>
-                <h1 className="text-5xl font-bold py-10 pb-20 mt-32">
+                <h1 className="popular-title text-5xl font-bold py-10 pb-20 mt-32">
                     Popular Services</h1>
             </div>
             <div className="hero min-h-screen bg-white">
@@ -38,7 +39,7 @@ const ServicesHome = () => {
             </div>
             <div className='pt-32'>
                 <Link to='/services'>
-                    <button className="btn btn-lg btn-outline btn-secondary text-2xl px-20">View All</button>
+                    <button className="view-all-btn btn btn-lg btn-outline btn-secondary text-2xl px-20">View All</button>
                 </Link>
             </div>
         </div>

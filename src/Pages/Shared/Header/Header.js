@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import titlelogo from '../../../assets/icons/titlelogo.png';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import './Header.css';
 
 const Header = () => {
 
@@ -30,12 +31,12 @@ const Header = () => {
                 :
                 <>
                     <li className='font-semibold'><Link to='/blog'>Blog</Link></li>
-                    <li className='font-semibold'><Link to='/login'>Login</Link></li>
+                    <li className='font-semibold '><Link to='/login'>Login</Link></li>
                 </>
         }
     </>
     return (
-        <div className="navbar bg-base-100 px-10 pb-5">
+        <div className="navbar bg-base-100 pb-5 ">
             <div className="dropdown">
                 <label tabIndex={0} className="btn btn-ghost lg:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -45,8 +46,8 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-start">
-                <Link to='/' className="btn btn-ghost normal-case" state={{ from: location }} replace>
-                    <img className='w-52' src={titlelogo} alt="" />
+                <Link to='/' className="btn btn-ghost normal-case " state={{ from: location }} replace>
+                    <img className='w-52 logo-img' src={titlelogo} alt="" />
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex pt-2">
@@ -59,7 +60,7 @@ const Header = () => {
                 {
                     user?.email ?
 
-                        <p className='text-xl font-medium'>Hi, <span className='text-blue-600'>{user.displayName}</span></p>
+                        <p className='text-xl font-medium title-name mr-5'>Hi, <span className='text-blue-600 '>{user.displayName}</span></p>
                         :
                         <></>
 

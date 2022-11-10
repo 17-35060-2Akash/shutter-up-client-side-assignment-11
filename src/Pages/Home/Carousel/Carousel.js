@@ -7,7 +7,7 @@ import BannerItem from './BannerItem';
 const bannerData = [
     {
         image: img1,
-        prev: 4,
+        prev: 3,
         id: 1,
         next: 2
     },

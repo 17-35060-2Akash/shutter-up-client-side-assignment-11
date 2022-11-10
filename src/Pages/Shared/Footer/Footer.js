@@ -10,15 +10,15 @@ const Footer = () => {
             <section className='bg-base-300' id="footer-contact">
                 <div className="flex flex-col align-middle justify-center pt-20">
                     <div className='flex flex-col align-middle justify-center'>
-                        <img className="w-40 mx-auto pb-6" src={logo} alt="" />
-                        <p className="font-bold pb-5 text-xl">
+                        <img className="w-40 mx-auto pb-6 footer-logo" src={logo} alt="" />
+                        <p className="font-bold pb-5 text-xl comp-logo">
                             Shutter Up Phototography<br />Shooting since 2002
                         </p>
 
                     </div>
 
-                    <p className="font-semibold pb-5 text-lg">Office 41, 5/5 Monipuri Para, Bijoy Sharoni, Dhaka</p>
-                    <div className='mt-4'>
+                    <p className="font-semibold pb-5 text-lg office-address">Office 41, 5/5 Monipuri Para, Bijoy Sharoni, Dhaka</p>
+                    <div className='mt-4 links-list'>
                         <nav className="text-purple-600">
                             <Link to='/contacts' className='px-5 text-xl font-medium'>Contact Us</Link>
                             <Link to='/about' className='px-5 text-xl font-medium'>About Us</Link>
@@ -29,7 +29,7 @@ const Footer = () => {
                         </nav>
 
                     </div>
-                    <div className="platform-icons flex flex-row align-middle justify-center my-4 ">
+                    <div className="platform-icons flex flex-row align-middle justify-center my-4 social-tab">
                         <Link to='/google' className='px-4 text-4xl'><FaGoogle></FaGoogle></Link>
                         <Link to='/git' className='px-4 text-4xl'><FaGithubSquare></FaGithubSquare></Link>
                         <Link to='linkedin' className='px-4 text-4xl'><FaLinkedin></FaLinkedin> </Link>
@@ -38,7 +38,7 @@ const Footer = () => {
                         <Link to='/wapp' className='px-4 text-4xl'><FaWhatsappSquare></FaWhatsappSquare> </Link>
 
                     </div>
-                    <p className='text-xl font-semibold text-purple-600 pb-4 mt-20 pb-32'>Copyright©2022 - All right reserved by Nasin A Akash</p>
+                    <p className='text-xl font-semibold text-purple-600 pb-4 mt-20 pb-32 copyright'>Copyright©2022 - All right reserved by Nasin A Akash</p>
 
                 </div>
             </section >

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import cover from '../../assets/covers/camera-cover.jpg';
 import useTitle from '../../hooks/useTitle';
+import './AddService.css';
 
 const AddService = () => {
     const [service, setService] = useState({});
@@ -56,7 +57,7 @@ const AddService = () => {
             </div>
 
             <div className="py-10 my-20 text-center ">
-                <h1 className='text-4xl font-bold '>Add a Service Here</h1>
+                <h1 className='text-4xl font-bold add-title'>Add a Service Here</h1>
                 {/* <p className='text-3xl font-semibold py-5 text-orange-600'></p> */}
             </div>
 

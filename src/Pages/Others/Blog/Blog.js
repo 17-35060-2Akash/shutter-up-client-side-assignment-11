@@ -10,7 +10,7 @@ const Blog = () => {
             <div className="hero-content text-center">
 
                 <div className="mt-20">
-                    <h1 className="text-5xl font-bold">Frequently Asked Questios</h1>
+                    <h1 className="text-4xl font-bold">Frequently Asked Questios</h1>
                     {/* 1 */}
                     <div className='pt-20 text-start'>
                         <h2 className='text-xl text-blue-600 font-semibold'>Q1. What are the difference between SQL and NoSQL?</h2>

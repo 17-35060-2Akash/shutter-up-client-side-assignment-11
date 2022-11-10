@@ -8,3 +8,62 @@
 .body-desc {
     border-radius: 20px;
 }
+
+@media screen and (max-width: 800px) {
+
+    .search-bar {
+        font-size: medium;
+        padding: auto 0;
+    }
+
+    .search-button {
+        font-size: medium;
+    }
+
+    .font-xl-for-sm {
+        font-size: x-large;
+    }
+
+    .popular-title {
+        font-size: x-large;
+    }
+
+    .view-all-btn {
+        font-size: larger;
+    }
+
+    .latest-title {
+        font-size: x-large;
+    }
+
+
+}
+
+@media screen and (min-width: 801px) and (max-width: 1100px) {
+
+    .search-bar {
+        font-size: large;
+        padding: auto 0;
+    }
+
+    .search-button {
+        font-size: large;
+    }
+
+    .font-xl-for-sm {
+        font-size: x-large;
+    }
+
+    .popular-title {
+        font-size: xx-large;
+    }
+
+    .view-all-btn {
+        font-size: medium;
+    }
+
+    .latest-title {
+        font-size: xx-large;
+    }
+
+}

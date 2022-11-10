@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Service from '../Service';
+import '../../Home.css';
 
 const LatestServices = () => {
     const [latestServices, setLatestServices] = useState([]);
@@ -21,7 +22,7 @@ const LatestServices = () => {
     return (
         <div className='mb-12'>
             <div>
-                <h1 className="text-5xl font-bold py-10 pb-20 mt-32">
+                <h1 className="latest-title text-5xl font-bold py-10 pb-20 mt-32">
                     Latest Services</h1>
             </div>
             <div className="hero min-h-screen bg-white">
