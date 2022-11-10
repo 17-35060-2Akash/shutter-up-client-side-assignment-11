@@ -16,7 +16,7 @@ const AddService = () => {
             return toast.error("Description can't be more than 300 words!");
         }
 
-        fetch('http://localhost:5000/services', {
+        fetch('https://shutter-up-server.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

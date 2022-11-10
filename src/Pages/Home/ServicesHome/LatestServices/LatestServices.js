@@ -9,7 +9,7 @@ const LatestServices = () => {
     useEffect(() => {
         const limit = 3;
         const avoid = 6;
-        const url = `http://localhost:5000/latestservices?limit=${limit}&avoid=${avoid}`;
+        const url = `https://shutter-up-server.vercel.app/latestservices?limit=${limit}&avoid=${avoid}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {

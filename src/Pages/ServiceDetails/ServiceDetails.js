@@ -12,7 +12,9 @@ const ServiceDetails = () => {
 
     const { _id, name, img, price, rating, description } = service;
 
-    const { user } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
+
+
     const location = useLocation();
     // console.log(user);
 
@@ -21,7 +23,7 @@ const ServiceDetails = () => {
     // const [serciveReviews, setServiceReviews] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/${_id}`)
+        fetch(`https://shutter-up-server.vercel.app/reviews/${_id}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
@@ -58,7 +60,7 @@ const ServiceDetails = () => {
 
         // console.log(review);
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://shutter-up-server.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -78,10 +80,14 @@ const ServiceDetails = () => {
             })
     };
 
+    if (loading) {
+        return < div className='text-center my-52'> <progress className="progress w-56">Loading...</progress></div >
+    }
+
     return (
         <div className=''>
             <section className="hero min-h-screen bg-base-200 service-section">
-                <div className="hero-content flex-col lg:flex-col pt-24">
+                <div className="hero-content flex-col lg:flex-col pt-28">
                     <img src={img} className=" rounded-lg shadow-2xl border-8 border-white" alt='' />
                     <div className="card-body font-bold">
                         <h2 className="card-title text-4xl font-bold mx-auto py-10">{name}</h2>
@@ -117,7 +123,7 @@ const ServiceDetails = () => {
                             {
                                 reviews.length === 0 ?
                                     <div>
-                                        <h1 className="text-2xl font-semibold py-10 pb-10 bg-gray-200 w-9/12 mx-auto rounded-xl">No reviews added to this section yet</h1>
+                                        <h1 className="text-2xl font-semibold py-10 px-5 pb-10 bg-gray-200 w-9/12 mx-auto rounded-xl">No reviews are added to this section yet</h1>
 
                                     </div>
                                     :

@@ -10,7 +10,7 @@ const ServicesHome = () => {
 
     useEffect(() => {
         const limit = 3;
-        const url = `http://localhost:5000/services?limit=${limit}`;
+        const url = `https://shutter-up-server.vercel.app/services?limit=${limit}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {

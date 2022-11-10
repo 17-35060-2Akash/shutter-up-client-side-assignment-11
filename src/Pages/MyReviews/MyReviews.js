@@ -13,7 +13,7 @@ const MyReviews = () => {
     const [myReviews, setMyReviews] = useState([]);
 
     useEffect(() => {
-        const url = `http://localhost:5000/reviews?email=${user?.email}`;
+        const url = `https://shutter-up-server.vercel.app/reviews?email=${user?.email}`;
         // console.log(url);
         fetch(url, {
             headers: {
@@ -22,7 +22,8 @@ const MyReviews = () => {
         })
             .then(res => {
                 if (res.status === 401 || res.status === 403) {
-                    return logOut()
+                    toast.error('Unauthorized Access!');
+                    return logOut();
                 }
                 return res.json();
             })
@@ -43,7 +44,7 @@ const MyReviews = () => {
             denyButtonText: `Don't Delete`,
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/reviews/${id}`, {
+                fetch(`https://shutter-up-server.vercel.app/reviews/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -64,7 +65,7 @@ const MyReviews = () => {
 
         /*  const agreed = window.confirm(`Are You sure to delete your review?`)
          if (agreed) {
-             fetch(`http://localhost:5000/reviews/${id}`, {
+             fetch(`https://shutter-up-server.vercel.app/reviews/${id}`, {
                  method: 'DELETE'
              })
                  .then(res => res.json())

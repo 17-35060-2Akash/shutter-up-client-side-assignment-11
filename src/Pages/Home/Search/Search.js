@@ -9,7 +9,7 @@ const Search = () => {
 
     const handleSearchOnChange = event => {
         const searchString = event.target.value;
-        const url = `http://localhost:5000/search?string=${searchString}`;
+        const url = `https://shutter-up-server.vercel.app/search?string=${searchString}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {

@@ -24,12 +24,12 @@ export const router = createBrowserRouter([
             {
                 path: '/services',
                 element: <Services></Services>,
-                loader: async () => fetch(`http://localhost:5000/services?limit=${50}`)
+                loader: async () => fetch(`https://shutter-up-server.vercel.app/services?limit=${50}`)
             },
             {
                 path: '/services/:id',
                 element: <ServiceDetails></ServiceDetails>,
-                loader: async ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: async ({ params }) => fetch(`https://shutter-up-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/login',
@@ -60,7 +60,7 @@ export const router = createBrowserRouter([
             {
                 path: '/update/:id',
                 element: <Update></Update>,
-                loader: async ({ params }) => fetch(`http://localhost:5000/update/${params.id}`)
+                loader: async ({ params }) => fetch(`https://shutter-up-server.vercel.app/update/${params.id}`)
             },
         ]
     },

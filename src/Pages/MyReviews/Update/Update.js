@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
-import { useLoaderData, useNavigate } from 'react-router-dom';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import useTitle from '../../../hooks/useTitle';
 
 const Update = () => {
@@ -21,7 +21,7 @@ const Update = () => {
         review['comment'] = comment;
         // console.log(review);
 
-        fetch(`http://localhost:5000/update/${review._id}`, {
+        fetch(`https://shutter-up-server.vercel.app/update/${review._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -52,7 +52,8 @@ const Update = () => {
                     </div>
                     <input type="text" name="comment" id="" placeholder='add your review' defaultValue={comment} className='h-12 px-5 ' />
                     <div className='flex justify-end'>
-                        <button className='btn  px-10 py-2 mt-4'>Edit</button>
+                        <button className='btn btn-ghost bg-gray-500 text-white font-semibold px-10 py-2 mt-4'>Edit</button>
+                        <Link to='/myreviews'><button className='btn btn-ghost bg-rose-500 text-white  px-7 py-2 mt-4 ml-3'>Cancel</button></Link>
                     </div>
                 </div>
 
