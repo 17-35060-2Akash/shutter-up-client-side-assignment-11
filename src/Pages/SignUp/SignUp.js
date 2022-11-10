@@ -13,7 +13,7 @@ const SignUp = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
-    const { createUser, updateUserProfile } = useContext(AuthContext);
+    const { createUser, updateUserProfile, setLoading } = useContext(AuthContext);
 
     const handleOnSubmit = event => {
         event.preventDefault();
@@ -57,7 +57,8 @@ const SignUp = () => {
                 console.error(error);
                 setError(error.message);
 
-            });
+            })
+            .finally(() => setLoading(false))
 
     };
 
@@ -99,7 +100,7 @@ const SignUp = () => {
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
-                            <input onChange={handleOnChange} type="text" name='name' placeholder="name" className="input input-bordered" />
+                            <input onChange={handleOnChange} type="text" name='name' placeholder="name" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">

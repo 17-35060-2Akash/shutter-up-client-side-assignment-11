@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
 import Service from '../Home/ServicesHome/Service';
 import cover from '../../assets/covers/img3.jpg';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 const Services = () => {
     useTitle('Services');
+    const { setLoading, loading } = useContext(AuthContext);
 
     const services = useLoaderData();
     // console.log(services);
+
+    if (loading) {
+        return < div className='text-center my-52'> <progress className="progress w-56">Loading...</progress></div >
+    }
     return (
         <div className='mb-40'>
             <div className=''>

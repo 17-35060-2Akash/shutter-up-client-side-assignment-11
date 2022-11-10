@@ -52,7 +52,7 @@ const Update = () => {
                     </div>
                     <input type="text" name="comment" id="" placeholder='add your review' defaultValue={comment} className='h-12 px-5 ' />
                     <div className='flex justify-end'>
-                        <button className='btn  px-10 py-2 mt-4'>Update</button>
+                        <button className='btn  px-10 py-2 mt-4'>Edit</button>
                     </div>
                 </div>
 
