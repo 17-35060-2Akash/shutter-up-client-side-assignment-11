@@ -1,20 +1,14 @@
 import React from 'react';
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaDollarSign, FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { FaStar, FaDollarSign } from "react-icons/fa";
-import { PhotoProvider, PhotoView } from 'react-photo-view';
-import 'react-photo-view/dist/react-photo-view.css';
+import '../Home.css';
 
-const Service = ({ product }) => {
-    const { _id, img, name, rating, price, description } = product;
+const SearchItem = ({ sr }) => {
+    const { _id, img, name, rating, price, description } = sr;
     return (
-        <div className="card w-96 glass rounded-md shadow-xl bg-zinc-400   text-white hover:text-black">
-            <PhotoProvider>
-                <PhotoView src={img}>
-                    <figure><img src={img} alt="car!" /></figure>
-                </PhotoView>
-            </PhotoProvider>
-            <div className="card-body font-bold">
+        <div className="card w-96 shadow-xl image-full bg-zinc-400 text-white hover:text-black search-card" style={{ width: '18rem' }}>
+            <figure><img src={img} alt="car!" className='search-card' /></figure>
+            <div className="card-body font-bold body-desc">
                 <h2 className="card-title text-2xl ">{name}</h2>
                 <div className='flex flex-row justify-between text-lg mt-2 '>
                     <div className='flex flex-row justify-between align-middle text-2xl'>
@@ -28,9 +22,9 @@ const Service = ({ product }) => {
                     </div>
 
                 </div>
-                <div className='mt-4'>
-                    <p>{description.slice(0, 99) + ' ...'}</p>
-                </div>
+                {<div className='mt-4'>
+                    <p>{description.slice(0, 50) + ' ...'}</p>
+                </div>}
                 <div className="card-actions justify-end">
                     <Link to={`/services/${_id}`}>
                         <button className="btn btn-ghost  text-2xl" title='View Details'><FaArrowRight></FaArrowRight></button>
@@ -41,4 +35,4 @@ const Service = ({ product }) => {
     );
 };
 
-export default Service;
+export default SearchItem;

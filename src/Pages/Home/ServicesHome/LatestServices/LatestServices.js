@@ -13,7 +13,7 @@ const LatestServices = () => {
             .then(res => res.json())
             .then(data => {
                 setLatestServices(data);
-                console.log(data);
+                // console.log(data);
             });
 
     }, []);
