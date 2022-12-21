@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+## Project Name: 
+Shutter Up, an website which offers photography services to the users and commneting on the uploaded photoes.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+##Live site Link(Firebase):
+https://shutter-up-d9948.web.app
 
-In the project directory, you can run:
+##Client Side Public Repository Link: 
+https://github.com/17-35060-2Akash/shutter-up-client-side-assignment-11
 
-### `npm start`
+##Server Side Public Repository Link: 
+https://github.com/17-35060-2Akash/shutter-up-server-side-assignment-11
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Description:
+Here is an website named Shutter Up. It's a react application which is designed to offer photography services to users. 
+People can also comment on the event photograpys that are offered if they are registered user.
+ 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#common parts:
+A navbar which is always in the top and the footer which is at bottom of the page are there always. 
+For Smaller screens when you toggle the navbar toggler it opens a side panel from the left. Moreover you can see the conditional toggling 
+between Login vs My Reviews, Add Service and Logout. If you login you can see the username on the navbar right corner.
+ 
+#Home Page:
+Everyone is allowed to see Home. first we'll encounter the main home where you can see a search section after the banner where any user can search events.
+Then there's the popular services part. If cliked on the view all button, you can see all the services in the services page. There is a section called the latest services
+which will show a newly added service is added everytime else invisible. 
 
-### `npm run build`
+#Service:
+When you click a specific service, it'll take you to service details page. Where you can see the comments of all reviewers, and add a review if logged in.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#My Reviews and Add Service:
+If you're logged in as a verified user You can see My Reviews where you can check, delete and update your reviews and and Add Service Page where you can add a new service.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#Login, Logout and Sign Up: 
+The login page has two types of login options. Email password based and google login.
+The signup page'll take you to the home. They are both secured properly.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+#Other pages:
+There are a Blog, Display error and an Not Found Page.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Features implemented:
+Structure and logic: React, js, react router, nodeexpress, mongodb etc.
+Security: Firebase Authentication and JWT Authorization.
+Beauty: tailwind Css, daisyUI, react icons, sweetalert, react hot toast etc.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+##API links:
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://shutter-up-server.vercel.app
