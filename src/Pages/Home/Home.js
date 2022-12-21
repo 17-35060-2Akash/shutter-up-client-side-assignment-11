@@ -19,9 +19,10 @@ const Home = () => {
         <div>
             <Carousel></Carousel>
             <Search></Search>
+            <PhotoGallery></PhotoGallery>
+
             <ServicesHome></ServicesHome>
             <LatestServices></LatestServices>
-            <PhotoGallery></PhotoGallery>
         </div>
     );
 };

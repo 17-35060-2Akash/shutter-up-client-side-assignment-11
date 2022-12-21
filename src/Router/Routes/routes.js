@@ -6,6 +6,7 @@ import Login from "../../Pages/Login/Login";
 import MyReviews from "../../Pages/MyReviews/MyReviews";
 import Update from "../../Pages/MyReviews/Update/Update";
 import Blog from "../../Pages/Others/Blog/Blog";
+import Contact from "../../Pages/Others/Contact/Contact";
 import NotFound from "../../Pages/Others/NotFound/NotFound";
 import ServiceDetails from "../../Pages/ServiceDetails/ServiceDetails";
 import Services from "../../Pages/Services/Services";
@@ -56,6 +57,10 @@ export const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/contact',
+                element: <Contact></Contact>
             },
             {
                 path: '/update/:id',

@@ -8,7 +8,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 const Service = ({ product }) => {
     const { _id, img, name, rating, price, description } = product;
     return (
-        <div className="card w-96 glass rounded-md shadow-xl bg-zinc-400   text-white hover:text-black">
+        <div className="card glass rounded-md shadow-xl bg-zinc-400   text-white hover:text-black">
             <PhotoProvider>
                 <PhotoView src={img}>
                     <figure><img src={img} alt="car!" /></figure>

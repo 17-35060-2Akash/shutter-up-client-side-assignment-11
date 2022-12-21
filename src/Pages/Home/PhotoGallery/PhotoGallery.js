@@ -16,7 +16,8 @@ const PhotoGallery = () => {
         <div className="hero min-h-screen bg-base-100 py-20 pb-36">
             <div className="hero-content flex-col lg:flex-col-reverse">
                 <div className="hero-content grid lg:grid-cols-3 grid-cols-2 gap-10 card-section">
-                    <img src={img9} className="max-w-sm shadow-2xl border-8 border-white options-div big-image" alt='' />
+                    <img src={img9} className="md:max-w-sm shadow-2xl border-8 border-white options-div" alt='' />
+                    {/* <img src={img9} className="md:max-w-sm shadow-2xl border-8 border-white options-div big-image" alt='' /> */}
 
                     <div className='grid grid-cols-2 gap-10'>
                         <img src={img4} className="max-w-sm shadow-2xl w-36 border-8 border-white options-div" alt='' />

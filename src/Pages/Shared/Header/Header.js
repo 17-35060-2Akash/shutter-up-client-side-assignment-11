@@ -18,20 +18,22 @@ const Header = () => {
     };
 
     const menuItems = <>
-        <li className='font-semibold'><Link to='/'>Home</Link></li>
+        <li className='font-semibold mx-2 my-1 hover:text-cyan-500'><Link to='/'>Home</Link></li>
 
         {
             user?.email ?
                 <>
-                    <li className='font-semibold'><Link to='/myreviews'>My Reviews</Link></li>
-                    <li className='font-semibold'><Link to='/addservice'>Add Service</Link></li>
-                    <li className='font-semibold'><Link to='/blog'>Blog</Link></li>
+                    <li className='font-semibold mx-2 my-1 hover:text-cyan-500'><Link to='/myreviews'>My Reviews</Link></li>
+                    <li className='font-semibold mx-2 my-1 hover:text-cyan-500'><Link to='/addservice'>Add Service</Link></li>
+                    <li className='font-semibold mx-2 my-1 hover:text-cyan-500'><Link to='/blog'>Blog</Link></li>
+                    <li className='font-semibold mx-2 my-1 hover:text-cyan-500'><Link to='/contact'>Contact</Link></li>
                     <button onClick={handleLOgOut} className='btn btn-secondary ml-2'>Logout</button>
                 </>
                 :
                 <>
-                    <li className='font-semibold'><Link to='/blog'>Blog</Link></li>
-                    <li className='font-semibold '><Link to='/login'>Login</Link></li>
+                    <li className='font-semibold mx-2 my-1 hover:text-cyan-500'><Link to='/blog'>Blog</Link></li>
+                    <li className='font-semibold mx-2 my-1 hover:text-cyan-500'><Link to='/contact'>Contact</Link></li>
+                    <li className='font-semibold mx-2 my-1 hover:text-cyan-500'><Link to='/login'>Login</Link></li>
                 </>
         }
     </>
